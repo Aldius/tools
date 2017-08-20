@@ -2,6 +2,8 @@ package hu.elte.tools.assignment.backend;
 
 import hu.elte.tools.assignment.shared.model.GomokuModel;
 
+import java.net.MalformedURLException;
+import java.rmi.NotBoundException;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
@@ -14,8 +16,8 @@ public interface GomokuServerIface extends Remote{
 
 	boolean register(String userName,  String password) throws RemoteException;
 
-	void searchForMatch(String userName, String address) throws RemoteException;
+	void searchForMatch(String userName, String address) throws RemoteException, MalformedURLException, NotBoundException;
 
-	void synchronizeModel(GomokuModel model) throws RemoteException;
+	void synchronizeModel(GomokuModel model, int sessionId, String name) throws RemoteException;
 
 }

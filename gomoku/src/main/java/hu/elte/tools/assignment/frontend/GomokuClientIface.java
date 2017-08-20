@@ -16,6 +16,8 @@ public interface GomokuClientIface extends Remote {
 
 	void synchronizeModel(GomokuModel model) throws RemoteException;
 
+	void receiveSessionId(int id) throws RemoteException;
+
 	void endGame(boolean winner) throws RemoteException;
 
 }
